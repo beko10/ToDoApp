@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+
+    {% if  todo %}
+        <div class="container">
+                <h2>Todo Detay</h2>
+                <hr>
+                <div class="todo-detail">
+                    <h3>{{ todo.title }}</h3>
+                    <p><strong>Oluşturulma Tarihi:</strong> {{ todo.created_date }}</p>
+                    <p><strong>Tamamlanma Durumu:</strong> {% if todo.completed %}Tamamlandı <a href="{% url 'todo:tododelete' todo.id %}" class="btn btn-danger">Todo sil </a>{% else %}Tamamlanmadı{% endif %}</p>
+                    <p><strong>İçerik:</strong></p>
+                    <p>{{ todo.contex }}</p>
+                </div>
+
+                <a href="{% url 'index' %} " class="btn btn-primary">Tüm Todoları gör</a>
+            </div>
+    {% else %}
+    {% endif %}
+
+{% endblock body %}

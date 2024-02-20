@@ -1,0 +1,23 @@
+.tamamla-text {
+    display: none; /* Başlangıçta gizli yapın */
+}
+
+.tamamla-link:hover .tamamla-text {
+    display: inline; /* Bağlantı üzerine gelindiğinde görünür yapın */
+}
+
+.guncelle-text {
+    display: none; /* Başlangıçta gizli yapın */
+}
+
+.guncelle-link:hover .guncelle-text {
+    display: inline; /* Bağlantı üzerine gelindiğinde görünür yapın */
+}
+
+.sil-text {
+    display: none; /* Başlangıçta gizli yapın */
+}
+
+.sil-link:hover .sil-text {
+    display: inline; /* Bağlantı üzerine gelindiğinde görünür yapın */
+}

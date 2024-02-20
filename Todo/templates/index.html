@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+
+ <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<div class="container">
+    <div class="row">
+        <div class="container-fluid py-5 text-center" style="background:#00000;">
+            <!-- İçerik buraya gelecek -->
+            <div>
+                {% if todos %}
+                    {% for todo in todos %}
+                        <div>
+                            <a href="{% url 'todo:tododetail' todo.id %}">{{todo.title}}</a>
+
+                            <a href="{% url 'todo:todocompleted' todo.id %}" class="tamamla-link">
+                                <img src="{% static 'images/tik.png' %}" alt="Tamamla">
+                                <span class="tamamla-text">Tamamla</span>
+                            </a>
+
+                            <a href="{% url 'todo:todoupdate' todo.id %}" class="guncelle-link">
+                                <img src="{% static 'images/update.jpeg' %}" alt="guncelle">
+                                <span class="guncelle-text">Guncelle</span>
+                            </a>
+
+                            <a href="{% url 'todo:tododelete' todo.id %}" class="sil-link">
+                                <img src="{% static 'images/sil.png' %}" alt="sil">
+                                <span class="sil-text">Sil</span>
+                            </a>
+
+
+                        </div>
+                    {% endfor %}
+                
+                {% else %}
+                    <p>Kayıtlı Todo Bulunamadı </p>
+                {% endif %}
+
+            <a href="{% url 'todo:todoadd' %}" class="btn btn-danger" style="background:#00000;">Todo Ekle</a>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+
+<
+
+</div>
+
+
+{% endblock body %}
